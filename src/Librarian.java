@@ -12,7 +12,25 @@ public class Librarian {
     //reads the texts quickly.
     public void loadFile(String fileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            //Declares the variable that stores each patron line
             String line;
+            //Reads each line until the file is completely read
+            while ((line = reader.readLine()) != null) {
+                //This splits each line using '-'
+                String[] sections = line.split("-");
+                //This checks that every line has the proper amount of information
+                //Such as ID, Name, Address, and Fines
+                if (sections.length == 4) {
+                    //This takes the ID, Name, Address, and Fines from the array
+                    //that is created.
+                    String ID = sections[0];
+                    String Name = sections[1];
+                    String Address = sections[2];
+                    //Converts the number from a String to a double
+                    double Fines = Double.parseDouble(sections[3]);
+                }
+
+            }
         }
     }
 }
