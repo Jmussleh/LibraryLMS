@@ -41,4 +41,9 @@ public class Patron {
         this.Fines = Fines;
     }
 
+    @Override
+    public String toString() {
+        return ID + "-" + Name + "-" + Address + "-" + Fines;
+    }
+
 }
