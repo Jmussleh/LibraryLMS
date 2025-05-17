@@ -12,34 +12,6 @@ public class Patron {
         this.Address = Address;
         this.Fines = Fines;
     }
-
-    //Getter methods
-    public String getID() {
-        return ID;
-    }
-    public String getName() {
-        return Name;
-    }
-    public String getAddress() {
-        return Address;
-    }
-    public double getFines() {
-        return Fines;
-    }
-
-    //Setter methods
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-    public void setAddress(String Address) {
-        this.Address = Address;
-    }
-    public void setFines(double Fines) {
-        this.Fines = Fines;
-    }
     //Overrides the toString to format the patron data as requested. Overwrites hashcode.
     @Override
     public String toString() {
