@@ -1,4 +1,3 @@
-import javax.lang.model.element.Name;
 import java.io.*;
 import java.util.*;
 
@@ -28,6 +27,7 @@ public class Librarian {
                     String Name = sections[1];
                     String Address = sections[2];
                     //Converts the number from a String to a double
+                    try {
                     double Fines = Double.parseDouble(sections[3]);
 
                     //Constructs a new patron object with the four attributes.
@@ -36,9 +36,11 @@ public class Librarian {
                     //the line so that the application doesn't crash.
                     Patron patron = new Patron(ID, Name, Address, Fines);
                     patrons.put(ID, patron);
-                } else {
-                    System.out.println("Invalid line formatting.");
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid fine amount.");
                 }
+            } else {
+                System.out.println("Invalid line formatting.");}
             }
             //Gives the user a message telling them how many patrons were loaded into
             //the internal map. Gives an error if the while loop cannot be completed.

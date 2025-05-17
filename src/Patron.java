@@ -17,12 +17,7 @@ public class Patron {
     public String getID() {
         return ID;
     }
-    public String getName() {
-        return Name;
-    }
-    public String getAddress() {
-        return Address;
-    }
+
     public double getFines() {
         return Fines;
     }

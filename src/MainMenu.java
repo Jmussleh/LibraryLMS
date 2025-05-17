@@ -8,7 +8,7 @@ public class MainMenu {
         boolean run = true;
         //While the program is running, give the user these options.
         while (run) {
-            System.out.println("*+*+*+* Library Management System *+*+*+*");
+            System.out.println("*+*+*+* || Library Management System || *+*+*+*");
             //Option to load patrons from a file
             System.out.println("1. Load patrons from a file");
             //Option to load a patron manually
@@ -31,6 +31,7 @@ public class MainMenu {
                     System.out.println("Enter file path: ");
                     String path = scanner.nextLine();
                     librarian.loadFile(path);
+                    librarian.displayPatrons();
                     break;
                 //Prompts that populate if add patron manually is chosen
                 case "2":
@@ -71,7 +72,7 @@ public class MainMenu {
                     break;
                 //Allows the user to exit the program
                 case "5":
-                    //Sets run to false to stop the program from running
+                    //Sets run to false which stops the program from running
                     run = false;
                     //Lets the user know that the program is ending
                     System.out.println("Exiting program...");
