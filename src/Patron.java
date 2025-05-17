@@ -40,7 +40,7 @@ public class Patron {
     public void setFines(double Fines) {
         this.Fines = Fines;
     }
-
+    //Overrides the toString to format the patron data as requested. Overwrites hashcode.
     @Override
     public String toString() {
         return ID + "-" + Name + "-" + Address + "-" + Fines;
