@@ -14,7 +14,7 @@ public class MainMenu {
             //Option to load a patron manually
             System.out.println("2. Add a patron manually");
             //Option to remove a patron by ID
-            System.out.println("3.Remove a patron");
+            System.out.println("3. Remove a patron");
             //Option to display all current patrons in the system
             System.out.println("4. Display all patrons");
             //Option for user to set run to false and exit the application
@@ -53,8 +53,31 @@ public class MainMenu {
                     //Calls the addPatron method from my Librarian class
                     librarian.addPatron(scanner);
                     break;
+                //Prompts user to remove a patron by their unique ID
+                case "3":
+                    System.out.println("Remove a patron");
+                    System.out.println("Enter a unique 7 digit ID of patron to remove: ");
+                    String removeId = scanner.nextLine();
+                    //Calls the method removePatron from the librarian class
+                    librarian.removePatron(scanner);
+                    break;
+                //Displays all patrons in the list in the correct format
+                case "4":
+                    System.out.println("Display all patrons");
+                    //Calls the method displayPatrons from the librarian class
+                    librarian.displayPatrons();
+                    break;
+                //Allows the user to exit the program
+                case "5":
+                    //Sets run to false to stop the program from running
+                    run = false;
+                    //Lets the user know that the program is ending
+                    System.out.println("Exiting program...");
+                    break;
 
             }
         }
+        //Closes the scanner object to free up system resources
+        scanner.close();
     }
 }
