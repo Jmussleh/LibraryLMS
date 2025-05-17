@@ -28,8 +28,16 @@ public class Librarian {
                     String Address = sections[2];
                     //Converts the number from a String to a double
                     double Fines = Double.parseDouble(sections[3]);
-                }
 
+                    //Constructs a new patron object with the four attributes.
+                    //Then the new patron object is inserted into the map.
+                    //If the line does not have exactly four fields then the program skips
+                    //the line so that the application doesn't crash.
+                    Patron patron = new Patron(ID, Name, Address, Fines);
+                    patrons.put(ID, patron);
+                } else {
+                    System.out.println("Invalid line formatting.");
+                }
             }
         }
     }
