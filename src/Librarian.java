@@ -66,6 +66,15 @@ public class Librarian {
         //Prompts the user to add a Fine amount between 0 and 250 then skip to the next line
         System.out.println("Enter Fine Amount (Between 0-250): ");
         double Fines = Double.parseDouble(scanner.nextLine());
-
+        //The if statement for a fine between 0 and 250. If it is not between those
+        //numbers an error is thrown.
+        if (Fines < 0 || Fines > 250) {
+            System.out.println("Invalid fine amount.");
+            return;
+        }
+        //Adds the patron to the system. Indicates that the patron was added successfully
+        Patron patron = new Patron(ID, name, Address, Fines);
+        patrons.put(ID, patron);
+        System.out.println("Patron added.");
     }
 }
