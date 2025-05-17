@@ -90,6 +90,17 @@ public class Librarian {
             System.out.println("Patron not found.");
         }
     }
-
+    //Displays all current patrons in the system following the
+    //toString format that I overrode in my Patron.java file
+    public void displayPatrons() {
+        if (patrons.isEmpty()) {
+            System.out.println("There are no patrons.");
+        } else {
+            System.out.println("Patrons:");
+            for (Patron patron : patrons.values()) {
+                System.out.println(patron.toString());
+            }
+        }
+    }
 
 }
