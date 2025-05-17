@@ -21,6 +21,40 @@ public class MainMenu {
             System.out.println("5. Exit");
             //Prompts the user to enter the number for which action they would like to perform
             System.out.println("Which action would you like to perform?  ");
+
+            String action = scanner.nextLine();
+
+            switch (action) {
+                //Prompts that populate if load patrons from file is chosen
+                case "1":
+                    System.out.println("Load patrons from a file");
+                    System.out.println("Enter file path: ");
+                    String path = scanner.nextLine();
+                    librarian.loadFile(path);
+                    break;
+                //Prompts that populate if add patron manually is chosen
+                case "2":
+                    System.out.println("Add a patron manually");
+                    //Prompts user to add a unique ID
+                    System.out.println("Enter a unique 7 digit ID: ");
+                    String id = scanner.nextLine();
+                    //Prompts user to enter a name
+                    System.out.println("Enter patron name: ");
+                    String name = scanner.nextLine();
+                    //Prompts user to enter an address
+                    System.out.println("Enter patron address: ");
+                    String address = scanner.nextLine();
+                    //Prompts user to enter amount of fines if any
+                    System.out.println("Enter patron fine amount: ");
+                    //Converts the String to a double
+                    double fines = Double.parseDouble(scanner.nextLine());
+                    //Creates a new patron object
+                    Patron patron = new Patron(id, name, address, fines);
+                    //Calls the addPatron method from my Librarian class
+                    librarian.addPatron(scanner);
+                    break;
+
+            }
         }
     }
 }
