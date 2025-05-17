@@ -77,4 +77,19 @@ public class Librarian {
         patrons.put(ID, patron);
         System.out.println("Patron added.");
     }
+
+    //The function to remove a patron using their unique ID.
+    //Uses if/else statement to tell you whether or not the patron
+    //with that ID was removed.
+    public void removePatron(Scanner scanner) {
+        System.out.println("Enter unique 7 digit ID of patron to remove: ");
+        String ID = scanner.nextLine();
+        if (patrons.containsKey(ID)) {
+            System.out.println("Patron removed successfully.");
+        } else {
+            System.out.println("Patron not found.");
+        }
+    }
+
+
 }
