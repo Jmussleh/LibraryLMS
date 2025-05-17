@@ -1,3 +1,4 @@
+import javax.lang.model.element.Name;
 import java.io.*;
 import java.util.*;
 
@@ -43,37 +44,27 @@ public class Librarian {
             //the internal map. Gives an error if the while loop cannot be completed.
             System.out.println("Loaded " + patrons.size() + " patrons.");
         } catch (IOException e) {
-            System.out.println("Error reading file.");
+            System.out.println("Error reading file." + e.getMessage());
         }
     }
     //Function for adding a patron manually. Must enter a unique ID
     //And all other attributes. Must also only enter a fine from 0-250 dollars.
-    public void addPatron(Scanner scanner) {
-        System.out.println("Enter unique 7 digit ID: ");
-        String ID = scanner.nextLine();
+    public void addPatron(Patron patron) {
+        String ID = patron.getID();
         //if the patron ID is found to already exists then return to enter unique
         //7 digit ID.
         if (patrons.containsKey(ID)) {
             System.out.println("Patron ID already exists.");
             return;
         }
-        //Prompts the user to enter a Name then skip to next line
-        System.out.println("Enter Name: ");
-        String name = scanner.nextLine();
-        //Prompts user to enter an Address then skip to next line
-        System.out.println("Enter Address: ");
-        String Address = scanner.nextLine();
-        //Prompts the user to add a Fine amount between 0 and 250 then skip to the next line
-        System.out.println("Enter Fine Amount (Between 0-250): ");
-        double Fines = Double.parseDouble(scanner.nextLine());
         //The if statement for a fine between 0 and 250. If it is not between those
         //numbers an error is thrown.
-        if (Fines < 0 || Fines > 250) {
+        if (patron.getFines() < 0 || patron.getFines() > 250) {
             System.out.println("Invalid fine amount.");
             return;
         }
         //Adds the patron to the system. Indicates that the patron was added successfully
-        Patron patron = new Patron(ID, name, Address, Fines);
+        //Patron patron = new Patron(ID, name, Address, Fines);
         patrons.put(ID, patron);
         System.out.println("Patron added.");
     }
@@ -81,10 +72,8 @@ public class Librarian {
     //The function to remove a patron using their unique ID.
     //Uses if/else statement to tell you whether or not the patron
     //with that ID was removed.
-    public void removePatron(Scanner scanner) {
-        System.out.println("Enter unique 7 digit ID of patron to remove: ");
-        String ID = scanner.nextLine();
-        if (patrons.containsKey(ID)) {
+    public void removePatron(String ID) {
+        if (patrons.remove(ID) != null) {
             System.out.println("Patron removed successfully.");
         } else {
             System.out.println("Patron not found.");

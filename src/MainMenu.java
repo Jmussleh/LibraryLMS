@@ -51,7 +51,8 @@ public class MainMenu {
                     //Creates a new patron object
                     Patron patron = new Patron(id, name, address, fines);
                     //Calls the addPatron method from my Librarian class
-                    librarian.addPatron(scanner);
+                    librarian.addPatron(patron);
+                    librarian.displayPatrons();
                     break;
                 //Prompts user to remove a patron by their unique ID
                 case "3":
@@ -59,7 +60,8 @@ public class MainMenu {
                     System.out.println("Enter a unique 7 digit ID of patron to remove: ");
                     String removeId = scanner.nextLine();
                     //Calls the method removePatron from the librarian class
-                    librarian.removePatron(scanner);
+                    librarian.removePatron(removeId);
+                    librarian.displayPatrons();
                     break;
                 //Displays all patrons in the list in the correct format
                 case "4":
