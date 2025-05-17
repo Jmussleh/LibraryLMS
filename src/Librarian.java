@@ -46,4 +46,26 @@ public class Librarian {
             System.out.println("Error reading file.");
         }
     }
+    //Function for adding a patron manually. Must enter a unique ID
+    //And all other attributes. Must also only enter a fine from 0-250 dollars.
+    public void addPatron(Scanner scanner) {
+        System.out.println("Enter unique 7 digit ID: ");
+        String ID = scanner.nextLine();
+        //if the patron ID is found to already exists then return to enter unique
+        //7 digit ID.
+        if (patrons.containsKey(ID)) {
+            System.out.println("Patron ID already exists.");
+            return;
+        }
+        //Prompts the user to enter a Name then skip to next line
+        System.out.println("Enter Name: ");
+        String name = scanner.nextLine();
+        //Prompts user to enter an Address then skip to next line
+        System.out.println("Enter Address: ");
+        String Address = scanner.nextLine();
+        //Prompts the user to add a Fine amount between 0 and 250 then skip to the next line
+        System.out.println("Enter Fine Amount (Between 0-250): ");
+        double Fines = Double.parseDouble(scanner.nextLine());
+
+    }
 }
