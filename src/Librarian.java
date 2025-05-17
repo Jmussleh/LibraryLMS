@@ -39,6 +39,11 @@ public class Librarian {
                     System.out.println("Invalid line formatting.");
                 }
             }
+            //Gives the user a message telling them how many patrons were loaded into
+            //the internal map. Gives an error if the while loop cannot be completed.
+            System.out.println("Loaded " + patrons.size() + " patrons.");
+        } catch (IOException e) {
+            System.out.println("Error reading file.");
         }
     }
 }
