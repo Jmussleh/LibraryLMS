@@ -25,7 +25,7 @@ public class Patron {
     //Overrides the toString to format the patron data as requested. Overwrites hashcode.
     @Override
     public String toString() {
-        return ID + "-" + Name + "-" + Address + "-" + Fines;
+        return "ID: " + ID + ", Name: " + Name + ", Address: " + Address + ", Fines: $" + Fines;
     }
 
 }
