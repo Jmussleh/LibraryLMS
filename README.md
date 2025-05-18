@@ -15,16 +15,16 @@ The Library LMS is a Java-based application run in the console window. This appl
 - Java Libraries
 
 ##Project Structure
-├── MainMenu.java # Main program interface and menu handling
-├── Librarian.java # Manages patron operations (load, add, remove, list)
-├── Patron.java # Patron class with ID, Name, Address, and Fines
+- MainMenu.java # Main program interface and menu handling
+- Librarian.java # Manages patron operations (load, add, remove, list)
+- Patron.java # Patron class with ID, Name, Address, and Fines
 
 ## Required format for Patrons.txt
 Each line must contain **4 values**, separated by a hyphen (`-`):
 Ex.
-  1245789-Sarah Jones-1136 Gorden Ave. Orlando, FL 32822-40.54
-  3256897-Mason Arby-6060 Saginaw St. Casselberry, FL 34852-0
-  4567891-Avery Jones-1919 Pine Lance Blvd. Oviedo, FL 32478-1.36
+  - 1245789-Sarah Jones-1136 Gorden Ave. Orlando, FL 32822-40.54
+  - 3256897-Mason Arby-6060 Saginaw St. Casselberry, FL 34852-0
+  - 4567891-Avery Jones-1919 Pine Lance Blvd. Oviedo, FL 32478-1.36
 
 ## Format: `ID-Name-Address-Fine`
 - `ID`: a unique 7-digit number
