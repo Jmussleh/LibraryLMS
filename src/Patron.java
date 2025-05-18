@@ -13,11 +13,11 @@ public class Patron {
         this.Fines = Fines;
     }
 
-    //Getters
+    //Getter for getID. Allows outside classes access to this value that is in a private field.
     public String getID() {
         return ID;
     }
-
+    //Getter for getFines. Allows outside classes access to this value that is in a private field.
     public double getFines() {
         return Fines;
     }

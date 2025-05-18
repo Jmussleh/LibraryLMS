@@ -10,7 +10,7 @@ public class Librarian {
     //Accepts a Sting for the fileName. The file closes automatically after
     //being read. FileReader reads all characters in the file while bufferedReader
     //reads the texts quickly.
-    public void loadFile(String fileName) {
+    public void loadPatrons(String fileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             //Declares the variable that stores each patron line
             String line;
@@ -40,7 +40,7 @@ public class Librarian {
                     System.out.println("Invalid fine amount.");
                 }
             } else {
-                System.out.println("Invalid line formatting.");}
+                System.out.println("File loaded...");}
             }
             //Gives the user a message telling them how many patrons were loaded into
             //the internal map. Gives an error if the while loop cannot be completed.
@@ -83,7 +83,7 @@ public class Librarian {
     }
     //Displays all current patrons in the system following the
     //toString format that I overrode in my Patron.java file
-    public void displayPatrons() {
+    public void listPatrons() {
         if (patrons.isEmpty()) {
             System.out.println("There are no patrons.");
         } else {
